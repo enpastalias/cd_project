@@ -35,3 +35,7 @@
 [ \t\n]+   { /* ignore whitespace */ }
 
 %%
+
+int yywrap() {
+    return 1;
+}
