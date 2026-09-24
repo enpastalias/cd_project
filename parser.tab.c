@@ -1317,7 +1317,7 @@ yyreturnlab:
 
 void yyerror(const char *s)
 {
-    printf("Syntax error\n");
+    printf("Syntax Error\n");
 }
 
 extern FILE *yyin;

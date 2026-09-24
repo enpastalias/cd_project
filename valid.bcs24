@@ -1,0 +1,11 @@
+BcsMain
+{
+    int a; int b; int max;
+    a = 15;
+    b = 20;
+    if (a > b) {
+        max = a
+    } else {
+        max = b
+    }
+}
