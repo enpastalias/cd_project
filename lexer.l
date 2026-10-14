@@ -1,5 +1,6 @@
 %{
     #include "parser.tab.h"
+    #include <string.h>
 %}
 
 %%
@@ -18,9 +19,9 @@
 "<"  {return LT;}
 ">"  {return GT;}
 
-[0-9]+  {return NUM;}
+[0-9]+  {yylval.str=strdup(yytext); return NUM;}
 
-[a-zA-Z][a-zA-Z0-9]*  {return ID;}
+[a-zA-Z][a-zA-Z0-9]*  {yylval.str=strdup(yytext); return ID;}
 
 "+" {return PLUS;}
 "*" {return MULT;}
@@ -32,7 +33,7 @@
 ")"  {return RPAREN;}
 
 
-[ \t\n]+   { /* ignore whitespace */ }
+[ \t\r\n]+   { /* ignore whitespace */ }
 
 %%
 
